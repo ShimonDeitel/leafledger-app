@@ -1,0 +1,41 @@
+{
+  "identifier" : "LeafLedgerStoreKit",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_locale" : "en_US"
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "leafledger_group",
+      "localizations" : [],
+      "name" : "Leaf Ledger Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "leafledger_pro_monthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlimited plants and propagation lineage tracking",
+              "displayName" : "Leaf Ledger Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "leafledger_pro_monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Leaf Ledger Pro Monthly",
+          "subscriptionGroupID" : "leafledger_group",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

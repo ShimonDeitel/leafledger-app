@@ -1,0 +1,75 @@
+name: LeafLedger
+options:
+  bundleIdPrefix: com.shimondeitel.leafledger
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  LeafLedger:
+    type: application
+    platform: iOS
+    sources:
+      - path: LeafLedger
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.leafledger
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: LeafLedger/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  LeafLedgerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: LeafLedgerTests
+      - path: LeafLedger.storekit
+    dependencies:
+      - target: LeafLedger
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.leafledger.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  LeafLedgerUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: LeafLedgerUITests
+    dependencies:
+      - target: LeafLedger
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.leafledger.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  LeafLedger:
+    build:
+      targets:
+        LeafLedger: all
+        LeafLedgerTests: [test]
+        LeafLedgerUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: LeafLedger.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: LeafLedger.storekit
+      targets:
+        - LeafLedgerTests
+        - LeafLedgerUITests
+    archive:
+      config: Release
